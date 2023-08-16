@@ -1,0 +1,27 @@
+version: '3.8'
+services:
+  mysql:
+      container_name: mysql
+      image: mysql:8.0
+      environment:
+        - MYSQL_RANDOM_ROOT_PASSWORD=password
+        - MYSQL_DATABASE=rates
+        - MYSQL_USER=myuser
+        - MYSQL_PASSWORD=password
+      command: mysqld --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci
+      volumes:
+        - ./mysql/init.sql:/docker-entrypoint-initdb.d/init.sql
+      ports:
+        - 3307:3306
+  go:
+    build: ./
+    command: /bin/sh -c "go run main.go"
+    stdin_open: true
+    tty: true
+    volumes:
+      - .:/app
+    ports:
+      - 8080:8080
+    depends_on:
+      - mysql
+  
