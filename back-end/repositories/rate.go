@@ -2,7 +2,7 @@ package repositories
 
 import (
 	"database/sql"
-	"golang/backend/models"
+	"learn-golang/back-end/models"
 	"time"
 )
 

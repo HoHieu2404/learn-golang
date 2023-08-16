@@ -1,8 +1,8 @@
 package services
 
 import (
-	"golang/backend/models"
-	repo "golang/backend/repositories"
+	"learn-golang/back-end/models"
+	repo "learn-golang/back-end/repositories"
 )
 
 type ServiceInterface interface {

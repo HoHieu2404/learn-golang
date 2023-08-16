@@ -1,21 +1,17 @@
 package handlers
 
 import (
-	"crypto/tls"
 	"encoding/json"
 	"fmt"
 
-	"golang/backend/models"
-	"golang/backend/services"
+	"learn-golang/back-end/models"
+	"learn-golang/back-end/services"
 	"io/ioutil"
 	"log"
 	"net/http"
-	"strings"
 	"time"
 
 	_ "github.com/go-sql-driver/mysql"
-	"github.com/mitchellh/mapstructure"
-	gomail "gopkg.in/mail.v2"
 	"github.com/gorilla/mux"
 )
 
